@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from requests import request
 
 app = Flask("__name__")
 
@@ -10,6 +11,8 @@ def home():
 
 @app.route("/encrypt")
 def encrypt():
+    if request.method == "POST":
+        password = request.form.get()
     return render_template('encrypton.html')
 
 

@@ -34,32 +34,13 @@
     </nav>
 
     <!--form box-->
-    <div class="container mt-5">
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-6">
-                <div class="card px-5 py-5" id="form1">
-                    <div class="form-data" v-if="!submitted">
-                        <div class="forms-inputs mb-4"> <span>Encrypted Password</span> <input autocomplete="off"
-                                type="text" v-model="email"
-                                v-bind:class="{'form-control':true, 'is-invalid' : !validEmail(email) && emailBlured}"
-                                v-on:blur="emailBlured = true">
-
-                        </div>
-                        <div class="forms-inputs mb-4"> <span>Key
-                            </span> <input autocomplete="off" type="password" v-model="password"
-                                v-bind:class="{'form-control':true, 'is-invalid' : !validPassword(password) && passwordBlured}"
-                                v-on:blur="passwordBlured = true">
-
-                        </div>
-                        <div class="mb-3"> <button v-on:click.stop.prevent="submit"
-                                class="btn btn-dark w-100">Decrypt</button> </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <form method="post">
+        <label for="firstname">password</label>
+        <input type="text" id="password" name="pass" placeholder="password">
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="key" name="key" placeholder="key">
+        <button type="submit">Login</button>
+    </form>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
